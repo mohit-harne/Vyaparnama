@@ -1,0 +1,101 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const documentaries = [
+  {
+    id: "FILM-01",
+    title: "Inside Surat's Largest Polyester Loom",
+    type: "Manufacturer Breakdown",
+    location: "Ring Road Textile Market, Surat",
+    duration: "18m 40s",
+    desc: "A raw look inside 40 water-jet looms weaving grey cloth. We calculate per-meter margins, packaging logistics, and how they dispatch to 14 states.",
+    views: "245,000+",
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80",
+    embedLink: "https://www.youtube.com/@vyaparnama"
+  },
+  {
+    id: "FILM-02",
+    title: "The Soybean Oil Mandi & Pressing Unit",
+    type: "Agri-Processing Teardown",
+    location: "Amravati MIDC, Maharashtra",
+    duration: "14m 12s",
+    desc: "From weighing truckloads arriving from local farmers to solvent extraction. Explaining bulk tin distribution and dealer commission structures.",
+    views: "182,000+",
+    image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=800&q=80",
+    embedLink: "https://www.youtube.com/@vyaparnama"
+  },
+  {
+    id: "FILM-03",
+    title: "How This Hardware Importer Moves 40 Containers",
+    type: "Wholesale & Logistics",
+    location: "Bhiwandi Logistics Hub, MH",
+    duration: "22m 05s",
+    desc: "Unloading architectural hardware, batch sorting, and supply dispatch across 400 retail hardware counters with zero manual stock errors.",
+    views: "310,000+",
+    image: "https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=800&q=80",
+    embedLink: "https://www.youtube.com/@vyaparnama"
+  }
+];
+---
+
+<Layout title="Ground Stories | Vyaparnama">
+  <div class="px-6 sm:px-12 pt-32 pb-24 max-w-7xl mx-auto">
+    
+    <div class="max-w-3xl mb-16">
+      <span class="text-xs font-mono uppercase tracking-[0.25em] text-[#FF4D00] block mb-3">Field Video Archive</span>
+      <h1 class="text-4xl sm:text-6xl font-black uppercase tracking-tight">On-Location Films.</h1>
+      <p class="text-white/60 text-base sm:text-lg font-light mt-4">
+        Every film below is shot inside actual production sheds and warehouses. Real owners, real machines, real wholesale volumes.
+      </p>
+    </div>
+
+    <div class="space-y-12">
+      {documentaries.map((doc, idx) => (
+        <article class="p-6 sm:p-8 rounded-3xl bg-white/[0.02] border border-white/10 hover:border-[#FF4D00]/50 transition-all grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <div class="lg:col-span-5 relative aspect-video rounded-2xl overflow-hidden bg-black border border-white/10">
+            <img 
+              src={doc.image} 
+              alt={doc.title} 
+              class="w-full h-full object-cover grayscale contrast-125 hover:grayscale-0 transition-all duration-500"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+            <span class="absolute bottom-3 right-3 font-mono text-[10px] bg-black/80 px-2.5 py-1 rounded text-[#FF4D00]">
+              ⏱ {doc.duration}
+            </span>
+          </div>
+
+          <div class="lg:col-span-7 flex flex-col justify-between space-y-4">
+            <div>
+              <div class="flex items-center gap-3 font-mono text-xs text-[#FF4D00] mb-2">
+                <span>{doc.id}</span>
+                <span>//</span>
+                <span class="text-white/40">{doc.type}</span>
+              </div>
+              <h2 class="text-2xl sm:text-3xl font-bold uppercase tracking-tight text-white mb-3">
+                {doc.title}
+              </h2>
+              <p class="text-white/60 text-sm font-light leading-relaxed">
+                {doc.desc}
+              </p>
+            </div>
+
+            <div class="pt-4 border-t border-white/5 flex flex-wrap items-center justify-between gap-4 font-mono text-xs">
+              <span class="text-white/40">📍 {doc.location}</span>
+              <a 
+                href={doc.embedLink} 
+                target="_blank" 
+                class="px-4 py-2 rounded-xl bg-[#FF4D00] text-white font-bold hover:bg-[#e04400] transition-colors inline-flex items-center gap-2"
+              >
+                <span>Watch on YouTube</span>
+                <span>↗</span>
+              </a>
+            </div>
+          </div>
+
+        </article>
+      ))}
+    </div>
+
+  </div>
+</Layout>

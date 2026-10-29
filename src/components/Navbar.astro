@@ -1,0 +1,85 @@
+---
+const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
+
+const links = [
+  { href: "/", label: "Home" },
+  { href: "/stories", label: "Ground Stories" },
+  { href: "/methodology", label: "Field Teardown" },
+  { href: "/contact", label: "Invite Production" },
+];
+---
+
+<header class="fixed top-0 w-full z-50 px-4 sm:px-8 py-4 transition-all duration-300" id="main-nav">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-5 py-3 rounded-2xl bg-[#0e0e0e]/85 backdrop-blur-xl border border-white/10 shadow-[0_10px_35px_rgba(0,0,0,0.8)]">
+    
+    <!-- Logo with Vermilion Accent -->
+    <a href="/" class="flex items-center gap-3 group">
+      <div class="h-8 w-auto flex items-center">
+        <!-- Brand wordmark & geometric chevron -->
+        <span class="text-xl font-black tracking-tighter uppercase font-mono text-white flex items-center">
+          <span class="text-[#FF4D00] font-black mr-1 text-2xl">▲</span> VYAPAR<span class="text-[#FF4D00]">NAMA</span>
+        </span>
+      </div>
+      <span class="hidden md:inline-block text-[9px] font-mono tracking-[0.25em] uppercase text-white/40 pl-3 border-l border-white/10">
+        The Business Network[cite: 2]
+      </span>
+    </a>
+
+    <!-- Desktop Nav Links -->
+    <nav class="hidden md:flex items-center gap-1 font-mono text-xs uppercase tracking-wider">
+      {links.map((link) => {
+        const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href));
+        return (
+          <a
+            href={link.href}
+            class={`px-4 py-2 rounded-xl transition-all duration-200 flex items-center gap-1.5 ${
+              isActive 
+                ? 'bg-[#FF4D00]/15 text-[#FF4D00] font-bold border border-[#FF4D00]/30 shadow-[0_0_15px_rgba(255,77,0,0.2)]' 
+                : 'text-white/60 hover:text-white hover:bg-white/[0.04]'
+            }`}
+          >
+            {isActive && <span class="w-1.5 h-1.5 rounded-full bg-[#FF4D00] animate-ping"></span>}
+            {link.label}
+          </a>
+        );
+      })}
+    </nav>
+
+    <!-- Mobile Button -->
+    <div class="flex items-center gap-3">
+      <a 
+        href="/contact" 
+        class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#FF4D00] text-white text-xs font-mono font-bold uppercase tracking-wider hover:bg-[#e04400] transition-colors shadow-[0_0_20px_rgba(255,77,0,0.3)]"
+      >
+        <span>Shoot Our Unit</span>
+        <span>→</span>
+      </a>
+
+      <button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 p-2 rounded-lg bg-white/5 border border-white/10" aria-label="Toggle Menu">
+        <span class="w-5 h-0.5 bg-white"></span>
+        <span class="w-5 h-0.5 bg-white"></span>
+      </button>
+    </div>
+
+  </div>
+
+  <!-- Mobile Dropdown -->
+  <div id="mobile-drawer" class="hidden md:hidden mt-2 p-4 rounded-2xl bg-[#0c0c0c] border border-white/10 space-y-2 font-mono text-sm">
+    {links.map((link) => (
+      <a href={link.href} class="block px-3 py-2 rounded-lg text-white/70 hover:text-[#FF4D00] hover:bg-white/5">
+        {link.label}
+      </a>
+    ))}
+    <a href="/contact" class="block text-center mt-3 py-2.5 rounded-xl bg-[#FF4D00] text-white font-bold">
+      Book Factory Film Tour
+    </a>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const drawer = document.getElementById('mobile-drawer');
+  btn?.addEventListener('click', () => {
+    drawer?.classList.toggle('hidden');
+  });
+</script>

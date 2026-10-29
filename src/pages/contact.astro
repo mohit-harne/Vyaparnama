@@ -1,0 +1,88 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Invite Production Crew | Vyaparnama">
+  <div class="px-6 sm:px-12 pt-32 pb-24 max-w-7xl mx-auto">
+    
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      
+      <!-- Info Left -->
+      <div class="lg:col-span-5 space-y-8">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-[0.25em] text-[#FF4D00] block mb-2">On-Site Filming Application</span>
+          <h1 class="text-4xl sm:text-6xl font-black uppercase tracking-tight">Shoot Our Business.</h1>
+          <p class="text-white/60 text-sm sm:text-base font-light mt-4 leading-relaxed">
+            Invite the Vyaparnama film crew to your factory floor, processing mill, or wholesale yard. We review your production details and reach out within 24 hours.
+          </p>
+        </div>
+
+        <div class="space-y-4 font-mono text-xs">
+          <!-- WhatsApp -->
+          <div class="p-5 rounded-2xl bg-white/[0.02] border border-white/10">
+            <span class="text-emerald-400 block mb-1">Direct Field WhatsApp:</span>
+            <a href="https://wa.me/919890229131" target="_blank" class="text-lg font-bold text-white hover:underline">
+              +91 98902 29131
+            </a>
+          </div>
+
+          <!-- Email -->
+          <div class="p-5 rounded-2xl bg-white/[0.02] border border-white/10">
+            <span class="text-white/40 block mb-1">Producer Desk Email:</span>
+            <a href="mailto:info@vyapo.com" class="text-lg font-bold text-white hover:underline">
+              info@vyapo.com
+            </a>
+          </div>
+
+          <!-- HQ Coordinates -->
+          <div class="p-5 rounded-2xl bg-white/[0.02] border border-white/10 space-y-1">
+            <span class="text-[#FF4D00] block">Central Bureau Base:</span>
+            <p class="text-white text-sm">PrimaThink, Badnera Road, Amravati, Maharashtra</p>
+            <p class="text-white/40 text-[11px]">Coordinating shoots across MH, Gujarat & Central India corridors.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form Right -->
+      <div class="lg:col-span-7 p-8 sm:p-10 rounded-3xl bg-white/[0.02] border border-white/10 backdrop-blur-xl">
+        <h3 class="text-xl font-bold uppercase tracking-tight mb-2">Unit Details Form</h3>
+        <p class="text-xs font-mono text-white/50 mb-6 uppercase tracking-wider">Provide production details for route scheduling</p>
+
+        <form class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-mono uppercase text-white/60 mb-2">Owner / Contact Person</label>
+              <input type="text" required placeholder="e.g. Sunil Agrawal" class="w-full bg-black/50 border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#FF4D00]" />
+            </div>
+            <div>
+              <label class="block text-xs font-mono uppercase text-white/60 mb-2">WhatsApp Contact</label>
+              <input type="tel" required placeholder="+91 98902 29131" class="w-full bg-black/50 border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#FF4D00]" />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-mono uppercase text-white/60 mb-2">Firm / Manufacturing Unit</label>
+              <input type="text" required placeholder="e.g. Agrawal Agro Processing" class="w-full bg-black/50 border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#FF4D00]" />
+            </div>
+            <div>
+              <label class="block text-xs font-mono uppercase text-white/60 mb-2">Location / Industrial Area</label>
+              <input type="text" required placeholder="e.g. MIDC Phase II, Jalgaon" class="w-full bg-black/50 border border-white/15 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#FF4D00]" />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-mono uppercase text-white/60 mb-2">What Do You Manufacture or Wholesale?</label>
+            <textarea rows="4" placeholder="Briefly describe your products, machinery type, and monthly production capacity..." class="w-full bg-black/50 border border-white/15 rounded-xl p-4 text-sm text-white focus:outline-none focus:border-[#FF4D00] resize-none"></textarea>
+          </div>
+
+          <button type="submit" class="w-full py-4 rounded-xl bg-[#FF4D00] text-white font-mono font-bold text-xs uppercase tracking-widest hover:bg-[#e04400] transition-colors shadow-[0_0_25px_rgba(255,77,0,0.3)]">
+            Transmit Application to Production Desk →
+          </button>
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+</Layout>

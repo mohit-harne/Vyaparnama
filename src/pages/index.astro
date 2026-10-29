@@ -1,0 +1,340 @@
+---
+// src/pages/index.astro
+import Layout from '../layouts/Layout.astro';
+
+
+const merchantStories = [
+  {
+    id: "textiles",
+    number: "01",
+    title: "Textile Mills & Weaving Looms",
+    location: "Ring Road Market, Surat",
+    metrics: "120k meters/day output",
+    youtubeId: "LXb3EKWsInQ",
+    desc: "A direct look into high-speed water jet looms turning raw yarn into commercial fabric."
+  },
+  {
+    id: "processing",
+    number: "02",
+    title: "Agro Processing & Seed Extraction",
+    location: "MIDC Industrial Area, Amravati",
+    metrics: "40 MT daily cold press",
+    youtubeId: "ScMzIvxBSi4",
+    desc: "From farmer arrivals at the APMC yard to automated packaging into 15L wholesale tins."
+  },
+  {
+    id: "logistics",
+    number: "03",
+    title: "Wholesale Mandi & Highway Depots",
+    location: "Bhiwandi Corridor, Maharashtra",
+    metrics: "40 freight trucks/night",
+    youtubeId: "L_LUpnjgPso",
+    desc: "Multi-tier commercial pallet dispatch connecting regional suppliers with retail counters."
+  },
+  {
+    id: "machinery",
+    number: "04",
+    title: "Industrial Hardware & Spare Casting",
+    location: "Kashmere Gate Hub, Delhi NCR",
+    metrics: "Zero-defect forging",
+    youtubeId: "dQw4w9WgXcQ",
+    desc: "Foundry inspection and CNC tolerances breakdown for tier-2 distributor networks."
+  }
+];
+
+const ecosystemVentures = [
+  {
+    tag: "VENTURE 01",
+    title: "Vyapo — Business Dictionary",
+    subtitle: "Digital Supply Chain & Catalog Sync",
+    desc: "A dedicated B2B infrastructure interconnecting manufacturers, wholesalers, and retailers to discover authentic suppliers and exchange live catalogs.",
+    badge: "B2B Network"
+  },
+  {
+    tag: "VENTURE 02",
+    title: "Vyaparnama Media & Agency",
+    subtitle: "Growth, Branding & Creator Network",
+    desc: "Operating under Vishwalata Ventures Private Limited, engineering digital growth strategies, performance marketing, and high-impact influencer collaborations.",
+    badge: "Scale & Reach"
+  },
+  {
+    tag: "VENTURE 03",
+    title: "Vyaparnama Business Magazine",
+    subtitle: "Field Intelligence & Trade Reports",
+    desc: "In-depth editorial profiles dissecting unlisted industrial success, manufacturing margins, and commercial supply chain blueprints.",
+    badge: "Editorial Insights"
+  }
+];
+---
+
+<Layout title="Vyaparnama | Where Commerce Meets Community">
+  
+
+  <!-- Main Content Layer -->
+  <main class="relative z-10 text-white selection:bg-[#FF4D00] selection:text-black bg-transparent">
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="min-h-screen flex flex-col justify-between px-6 sm:px-12 md:px-16 pt-28 pb-14 max-w-7xl mx-auto">
+      
+      <!-- Top Telemetry Slate -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-6">
+        <div class="flex items-center gap-3 font-mono text-xs text-white/80">
+          <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FF4D00]/20 border border-[#FF4D00]/50 text-[#FF4D00]">
+            <span class="w-2 h-2 rounded-full bg-[#FF4D00] animate-ping"></span>
+            LIVE BROADCAST
+          </span>
+          <span class="text-white/50">VISHWALATA VENTURES PVT LTD</span>
+        </div>
+
+        <div class="font-mono text-xs text-white/60 flex items-center gap-2">
+          <span class="text-[#FF4D00]">■</span> MH-VIDARBHA // NATIONAL SUPPLY ARTERIES
+        </div>
+      </div>
+
+      <!-- Main Headline Typography -->
+      <div class="my-auto py-10 md:py-14">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-black/40 backdrop-blur-md border border-white/15 text-xs font-mono text-white/70 mb-6 uppercase tracking-widest">
+          Documenting Real Ground-Zero Enterprise
+        </div>
+        
+        <h1 class="text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] font-black uppercase tracking-tight leading-[0.93] text-white">
+          Where Commerce <br />
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/90 to-white/40">
+            Meets Community.
+          </span>
+        </h1>
+
+        <p class="mt-6 text-base sm:text-lg md:text-xl text-white/70 max-w-2xl font-light leading-relaxed">
+          Vyaparnama uncovers authentic business journeys, industrial manufacturing processes, and ground-reality supply dynamics across India's wholesale networks.
+        </p>
+
+        <!-- Call to Action Cluster -->
+        <div class="flex flex-wrap items-center gap-4 mt-8">
+          <a
+            href="#broadcasts"
+            class="px-7 py-3.5 rounded-xl bg-[#FF4D00] text-white font-bold text-xs uppercase tracking-wider hover:bg-[#e04400] transition-colors shadow-[0_0_25px_rgba(255,77,0,0.4)] inline-flex items-center gap-2"
+          >
+            <span>Explore Documentaries</span>
+            <svg class="w-4 h-4 fill-none stroke-current stroke-2" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+          </a>
+
+          <a
+            href="#ecosystem"
+            class="px-7 py-3.5 rounded-xl bg-black/50 backdrop-blur-md border border-white/20 text-white font-mono text-xs uppercase tracking-wider hover:bg-white/10 transition-colors inline-flex items-center gap-2"
+          >
+            <span>The Vyapo Ecosystem</span>
+            <svg class="w-4 h-4 fill-none stroke-current stroke-2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Strip -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-6 border-t border-white/10 font-mono text-xs text-white/60">
+        <div>
+          <span class="block text-2xl font-bold text-white font-sans">100+</span>
+          <span>Factory Audits</span>
+        </div>
+        <div>
+          <span class="block text-2xl font-bold text-white font-sans">50M+</span>
+          <span>Views Generated</span>
+        </div>
+        <div>
+          <span class="block text-2xl font-bold text-white font-sans">1000+</span>
+          <span>Verified Suppliers</span>
+        </div>
+        <div>
+          <span class="block text-2xl font-bold text-emerald-400 font-sans">Active</span>
+          <span>Tier-2 Trade Corridors</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 2: FIELD BROADCAST STORIES ==================== -->
+    <section id="broadcasts" class="min-h-screen flex flex-col justify-center px-6 sm:px-12 md:px-16 py-24 max-w-7xl mx-auto">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/10 pb-6 mb-10">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-[#FF4D00]">Ground Reconnaissance</span>
+          <h2 class="text-3xl sm:text-5xl font-black uppercase tracking-tight text-white mt-1">
+            Featured Field Broadcasts
+          </h2>
+        </div>
+        <p class="font-mono text-xs text-white/50 max-w-xs">
+          Direct on-location access from looms, mills, extraction setups, and transit hubs.
+        </p>
+      </div>
+
+      <div class="divide-y divide-white/[0.08]" id="story-list-container">
+        {merchantStories.map((item, index) => (
+          <a
+            href={`https://www.youtube.com/watch?v=${item.youtubeId}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="story-row group block py-6 sm:py-8 transition-opacity duration-300 no-underline cursor-pointer"
+            data-story-id={item.id}
+            data-index={index}
+          >
+            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+              
+              <div class="flex items-start sm:items-center gap-4 sm:gap-8">
+                <span class="font-mono text-xs sm:text-sm text-white/30 group-hover:text-[#FF4D00] transition-colors duration-300 pt-1 sm:pt-0 min-w-[2.5rem]">
+                  ({item.number})
+                </span>
+
+                <h3 class="text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight leading-[0.95] text-white/50 group-hover:text-white transition-all duration-300 group-hover:translate-x-2">
+                  {item.title}
+                </h3>
+              </div>
+
+              <div class="flex items-center gap-4 sm:gap-6 font-mono text-xs text-white/40 group-hover:text-white/80 transition-colors duration-300 pl-10 lg:pl-0 shrink-0">
+                <span class="hidden sm:inline-block">📍 {item.location}</span>
+                <span class="px-2.5 py-1 rounded-full bg-white/[0.05] border border-white/10 text-emerald-400 group-hover:border-emerald-400/40 transition-colors">
+                  {item.metrics}
+                </span>
+                <span class="text-lg text-white/30 group-hover:text-[#FF4D00] transform group-hover:translate-x-1 transition-all">
+                  ↗
+                </span>
+              </div>
+
+            </div>
+
+            <p class="text-white/0 group-hover:text-white/70 text-xs sm:text-sm font-light max-w-2xl pl-10 sm:pl-[4.5rem] mt-0 group-hover:mt-3 max-h-0 group-hover:max-h-20 overflow-hidden transition-all duration-300 ease-out">
+              {item.desc}
+            </p>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 3: THE VYAPO ECOSYSTEM ==================== -->
+    <section id="ecosystem" class="min-h-screen flex flex-col justify-center px-6 sm:px-12 md:px-16 py-24 max-w-7xl mx-auto">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-white/10 pb-6 mb-12">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-[#FF4D00]">Commercial Infrastructure</span>
+          <h2 class="text-3xl sm:text-5xl font-black uppercase tracking-tight text-white mt-1">
+            The Ventures Behind Vyaparnama
+          </h2>
+        </div>
+        <p class="font-mono text-xs text-white/60 max-w-sm">
+          Operating under <strong class="text-white font-semibold">Vishwalata Ventures Private Limited</strong>, building trade intelligence across manufacturing and supply rings.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+        {ecosystemVentures.map((venture) => (
+          <div class="venture-card group relative p-8 rounded-2xl bg-[#0a0a0a]/70 backdrop-blur-md border border-white/10 hover:border-[#FF4D00]/50 transition-all duration-300 flex flex-col justify-between min-h-[360px] overflow-hidden">
+            
+            <div class="absolute top-0 right-0 w-32 h-32 bg-[#FF4D00]/[0.06] group-hover:bg-[#FF4D00]/[0.16] blur-2xl transition-all duration-500 pointer-events-none"></div>
+
+            <div>
+              <div class="flex items-center justify-between mb-5">
+                <span class="font-mono text-[11px] text-white/40 tracking-widest">{venture.tag}</span>
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono border border-white/10 bg-white/[0.04] text-white/70">
+                  {venture.badge}
+                </span>
+              </div>
+
+              <h3 class="text-2xl font-bold uppercase tracking-tight text-white mb-2 group-hover:text-[#FF4D00] transition-colors">
+                {venture.title}
+              </h3>
+              
+              <div class="font-mono text-xs text-white/50 mb-4">{venture.subtitle}</div>
+
+              <p class="text-xs sm:text-sm text-white/65 leading-relaxed font-light">
+                {venture.desc}
+              </p>
+            </div>
+
+            <div class="pt-6 border-t border-white/[0.08] flex items-center justify-between text-xs font-mono text-white/40 group-hover:text-white transition-colors">
+              <span>EXPLORE PLATFORM</span>
+              <span class="transform group-hover:translate-x-1 group-hover:text-[#FF4D00] transition-transform">→</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- ==================== SECTION 4: CALL TO ACTION ==================== -->
+    <section class="px-6 sm:px-12 md:px-16 py-20 max-w-7xl mx-auto">
+      <div class="p-8 sm:p-14 rounded-3xl bg-black/60 backdrop-blur-lg border border-white/15 relative overflow-hidden shadow-2xl">
+        
+        <div class="absolute -right-16 -top-16 w-80 h-80 rounded-full bg-[#FF4D00]/15 blur-[100px] pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-2xl">
+          <span class="font-mono text-xs uppercase tracking-widest text-[#FF4D00] block mb-3">Field Broadcast Invitations</span>
+          <h2 class="text-3xl sm:text-5xl font-black uppercase tracking-tight text-white leading-tight">
+            Want your factory or unit documented?
+          </h2>
+          <p class="mt-4 text-sm sm:text-base text-white/70 font-light leading-relaxed">
+            Invite our broadcast crew to your manufacturing plant, mandis, or distribution warehouse. Share your authentic supply story with millions of entrepreneurs and suppliers.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 mt-8">
+            <a
+              href="https://wa.me/919890229131?text=Hello%20Vyaparnama,%20we%20want%20to%20invite%20your%20crew%20to%20our%20commercial%20facility"
+              target="_blank"
+              class="px-6 py-3.5 rounded-xl bg-emerald-500 text-black font-bold text-xs uppercase tracking-wider hover:bg-emerald-400 transition-colors inline-flex items-center gap-2 shadow-[0_0_20px_rgba(16,185,129,0.3)] cursor-pointer"
+            >
+              <span>Connect on WhatsApp</span>
+              <svg class="w-4 h-4 fill-none stroke-current stroke-2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+
+            <a
+              href="https://www.youtube.com/@vyaparnama"
+              target="_blank"
+              class="px-6 py-3.5 rounded-xl bg-white/[0.06] border border-white/15 text-white font-mono text-xs uppercase tracking-wider hover:bg-white/10 transition-colors inline-flex items-center gap-2 cursor-pointer"
+            >
+              <span>Subscribe on YouTube</span>
+              <svg class="w-4 h-4 fill-none stroke-current stroke-2" viewBox="0 0 24 24"><path d="M10 9l5 3-5 3V9z"/><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.43z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== EXECUTIVE FOOTER ==================== -->
+    <footer class="border-t border-white/10 px-6 sm:px-12 md:px-16 py-10 max-w-7xl mx-auto font-mono text-xs text-white/50 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div>
+        <p class="text-white font-sans font-bold text-sm">VYAPARNAMA</p>
+        <p class="mt-1">A division of Vishwalata Ventures Private Limited</p>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <a href="https://www.youtube.com/@vyaparnama" target="_blank" class="hover:text-[#FF4D00] transition-colors cursor-pointer">YouTube</a>
+        <span>•</span>
+        <a href="https://wa.me/919890229131" target="_blank" class="hover:text-emerald-400 transition-colors cursor-pointer">WhatsApp</a>
+        <span>•</span>
+        <a href="#broadcasts" class="hover:text-white transition-colors cursor-pointer">Field Logs</a>
+      </div>
+    </footer>
+
+  </main>
+</Layout>
+
+<script>
+  function setupHoverEffects() {
+    const rows = document.querySelectorAll<HTMLElement>('.story-row');
+    const container = document.getElementById('story-list-container');
+
+    rows.forEach((row) => {
+      row.addEventListener('mouseenter', () => {
+        rows.forEach((r) => {
+          if (r !== row) r.style.opacity = '0.25';
+          else r.style.opacity = '1';
+        });
+      });
+    });
+
+    container?.addEventListener('mouseleave', () => {
+      rows.forEach((r) => (r.style.opacity = '1'));
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupHoverEffects);
+  } else {
+    setupHoverEffects();
+  }
+  document.addEventListener('astro:page-load', setupHoverEffects);
+</script>
