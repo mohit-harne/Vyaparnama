@@ -1,0 +1,330 @@
+---
+// src/pages/services.astro
+import Layout from '../layouts/Layout.astro';
+
+const agencyServices = [
+  {
+    code: "SRV // 01",
+    title: "Ground Documentary & Visual Field Coverage",
+    badge: "Core Production",
+    desc: "End-to-end on-location cinematic production for industrial plants, textile mills, casting units, and processing facilities. We dissect your manufacturing line, tolerances, and supply capacity into compelling digital video stories.",
+    capabilities: [
+      "Multi-cam 4K industrial plant & APMC yard shoot",
+      "Drone cinematography & factory floor aerial mapping",
+      "Executive interview & founder origin story teardown",
+      "Technical process breakdown & line telemetry graphics",
+      "YouTube long-form documentary + Reels/Shorts cutdowns"
+    ],
+    metric: "50M+ Organic Views Generated"
+  },
+  {
+    code: "SRV // 02",
+    title: "Performance & B2B Digital Marketing",
+    badge: "Scale & Revenue",
+    desc: "Engineered specifically for manufacturers, wholesalers, and commercial brands under Vishwalata Ventures Private Limited. We generate high-ticket dealer/distributor inquiries through targeted digital acquisition.",
+    capabilities: [
+      "Meta & Google hyper-targeted B2B buyer campaigns",
+      "Regional trade corridor SEO & intent optimization",
+      "Automated lead capture & WhatsApp CRM dispatch pipelines",
+      "Retargeting funnels across wholesale buyers & retail merchants",
+      "Conversion tracking & verified inquiry qualification"
+    ],
+    metric: "High-Ticket Trade Inquiry Focus"
+  },
+  {
+    code: "SRV // 03",
+    title: "Exclusive Influencer & Creator Network",
+    badge: "Authority & Reach",
+    desc: "Direct access to our curated network of regional and national business, trade, and finance creators. Amplify your industrial brand, product launches, or retail network across verified audiences.",
+    capabilities: [
+      "Brand-to-creator alignment across Tier-1 and Tier-2 hubs",
+      "Factory tour invitations with industry-specific creators",
+      "Wholesale unboxing & bulk product demonstrations",
+      "Sponsored multi-platform digital roadshows",
+      "Authentic community trust building over traditional ads"
+    ],
+    metric: "Verified Regional Trade Reach"
+  },
+  {
+    code: "SRV // 04",
+    title: "Strategic Branding & Market Positioning",
+    badge: "Identity Systems",
+    desc: "Transform unlisted regional enterprises into trusted national trade brands. We construct industrial-grade brand identities, commercial trade catalogs, and high-performance digital interfaces.",
+    capabilities: [
+      "Corporate brand architecture & visual positioning",
+      "Digital product catalogs formatted for wholesale dispatch",
+      "Ultra-responsive Astro + GSAP interactive websites",
+      "Trust badge certification & KYC/GST compliance auditing",
+      "Packaging, collateral, and trade exhibition design"
+    ],
+    metric: "National Brand Transformation"
+  }
+];
+
+const productionWorkflow = [
+  {
+    step: "01",
+    phase: "Plant Reconnaissance",
+    detail: "Initial consultation and preliminary review of your manufacturing or warehouse infrastructure, capacity, and distribution nodes."
+  },
+  {
+    step: "02",
+    phase: "Field Crew Dispatch",
+    detail: "Our production unit arrives on-site with cinema gear, drones, and telemetry equipment to capture your operational workflow without halting production."
+  },
+  {
+    step: "03",
+    phase: "Post-Production Engineering",
+    detail: "Dynamic narrative editing, colour grade, technical motion graphics, and telemetry subtitles designed to retain viewer attention."
+  },
+  {
+    step: "04",
+    phase: "Multi-Channel Distribution",
+    detail: "Deployment across the Vyaparnama YouTube channel, Vyapo business dictionary, social networks, and targeted B2B media funnels."
+  }
+];
+---
+
+<Layout title="Services | Vyaparnama Commercial Agency">
+  <main class="relative z-10 text-white selection:bg-[#FF4D00] selection:text-black bg-transparent">
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="min-h-[60vh] flex flex-col justify-end px-5 sm:px-8 lg:px-12 pt-32 pb-14 max-w-7xl mx-auto box-border">
+      
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-5 mb-8">
+        <div class="flex items-center gap-3 font-mono text-xs">
+          <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FF4D00]/20 border border-[#FF4D00]/50 text-[#FF4D00] backdrop-blur-md">
+            <span class="w-2 h-2 rounded-full bg-[#FF4D00] animate-ping"></span>
+            CAPABILITY MANIFEST
+          </span>
+          <span class="text-white/60 tracking-wider hidden sm:inline-block font-semibold">
+            VISHWALATA VENTURES PRIVATE LIMITED
+          </span>
+        </div>
+        <div class="font-mono text-xs text-white/70">
+          Agency & Production Services // 2026
+        </div>
+      </div>
+
+      <div class="max-w-4xl space-y-6">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/15 text-[11px] font-mono text-white/90 uppercase tracking-widest">
+          Engineered for Enterprise Scale
+        </div>
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black uppercase tracking-tight text-white leading-[0.95]">
+          Commercial Production & <br />
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/90 to-[#FF4D00]">
+            B2B Growth Engineering.
+          </span>
+        </h1>
+        <p class="text-white/80 text-base sm:text-lg lg:text-xl font-light leading-relaxed max-w-3xl">
+          Vyaparnama operates under <strong class="text-white font-semibold">Vishwalata Ventures Private Limited</strong>. We help manufacturers, brands, and entrepreneurs scale through field documentaries, targeted digital marketing, strategic branding, and our exclusive creator network.
+        </p>
+      </div>
+
+    </section>
+
+    <!-- ==================== DETAILED SERVICES GRID ==================== -->
+    <section class="px-5 sm:px-8 lg:px-12 py-16 max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-white/15 pb-6 mb-12">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-[#FF4D00] font-bold block mb-1">
+            // Core Solutions
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-black uppercase tracking-tight text-white">
+            What We Deliver
+          </h2>
+        </div>
+        <p class="font-mono text-xs sm:text-sm text-white/70 max-w-sm">
+          Precision execution tailored to unlisted industrial units, regional brands, and expanding trade networks.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 services-grid">
+        {agencyServices.map((srv) => (
+          <div class="service-card group relative p-8 sm:p-10 rounded-3xl bg-black/65 backdrop-blur-2xl border border-white/15 hover:border-[#FF4D00]/60 transition-all duration-300 flex flex-col justify-between shadow-[0_20px_50px_rgba(0,0,0,0.7)]">
+            
+            <div class="absolute top-0 right-0 w-44 h-44 bg-[#FF4D00]/[0.08] group-hover:bg-[#FF4D00]/[0.2] blur-3xl transition-all duration-500 pointer-events-none"></div>
+
+            <div>
+              <div class="flex items-center justify-between mb-6 pb-4 border-b border-white/10 font-mono text-xs">
+                <span class="text-[#FF4D00] font-bold tracking-widest">{srv.code}</span>
+                <span class="px-3 py-1 rounded-full border border-white/15 bg-white/[0.04] text-white/80">
+                  {srv.badge}
+                </span>
+              </div>
+
+              <h3 class="text-2xl sm:text-3xl font-extrabold uppercase tracking-tight text-white mb-4 group-hover:text-[#FF4D00] transition-colors">
+                {srv.title}
+              </h3>
+
+              <p class="text-white/80 text-sm sm:text-base font-light leading-relaxed mb-6">
+                {srv.desc}
+              </p>
+
+              <div class="space-y-2.5 pt-4 border-t border-white/10">
+                <span class="font-mono text-[11px] uppercase tracking-wider text-white/50 block mb-3">
+                  Scope of Delivery:
+                </span>
+                {srv.capabilities.map((cap) => (
+                  <div class="flex items-start gap-2.5 text-xs sm:text-sm text-white/85 font-light">
+                    <span class="text-[#FF4D00] mt-0.5">■</span>
+                    <span>{cap}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div class="pt-8 mt-8 border-t border-white/10 flex items-center justify-between font-mono text-xs">
+              <span class="text-emerald-400 font-semibold">{srv.metric}</span>
+              <a 
+                href="https://wa.me/919890229131?text=Hello%20Vyaparnama,%20we%20want%20to%20inquire%20about%20your%20services" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1.5 text-white/80 group-hover:text-[#FF4D00] transition-colors"
+              >
+                <span>Book Service</span>
+                <span>→</span>
+              </a>
+            </div>
+
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- ==================== PRODUCTION FIELD WORKFLOW ==================== -->
+    <section class="px-5 sm:px-8 lg:px-12 py-20 max-w-7xl mx-auto">
+      <div class="p-8 sm:p-12 lg:p-14 rounded-3xl bg-black/65 backdrop-blur-2xl border border-white/15 shadow-[0_20px_50px_rgba(0,0,0,0.85)]">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-white/10 pb-6 mb-10">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-widest text-[#FF4D00] font-bold block mb-1">
+              // Execution Protocol
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-black uppercase tracking-tight text-white">
+              How Our Crew Operates
+            </h2>
+          </div>
+          <p class="font-mono text-xs sm:text-sm text-white/70 max-w-xs">
+            From initial factory scout to full digital release across YouTube and commercial B2B corridors.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {productionWorkflow.map((item) => (
+            <div class="p-6 rounded-2xl bg-white/[0.02] border border-white/10 flex flex-col justify-between">
+              <div>
+                <span class="font-mono text-2xl font-black text-[#FF4D00] block mb-3">
+                  {item.step}
+                </span>
+                <h4 class="text-lg font-bold uppercase tracking-tight text-white mb-2">
+                  {item.phase}
+                </h4>
+                <p class="text-xs sm:text-sm text-white/70 font-light leading-relaxed">
+                  {item.detail}
+                </p>
+              </div>
+              <div class="mt-6 pt-4 border-t border-white/5 font-mono text-[10px] text-white/30 uppercase tracking-widest">
+                Protocol Active
+              </div>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== INVITATION & CTA SECTION ==================== -->
+    <section class="px-5 sm:px-8 lg:px-12 py-16 max-w-7xl mx-auto">
+      <div class="p-8 sm:p-12 lg:p-14 rounded-3xl bg-black/70 backdrop-blur-2xl border border-white/20 relative overflow-hidden shadow-[0_25px_60px_rgba(0,0,0,0.95)]">
+        
+        <div class="absolute -right-20 -top-20 w-96 h-96 rounded-full bg-[#FF4D00]/20 blur-[130px] pointer-events-none"></div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
+          
+          <div class="lg:col-span-7 space-y-4">
+            <span class="font-mono text-xs uppercase tracking-widest text-[#FF4D00] font-bold block">
+              // Direct Production Engagement
+            </span>
+            <h2 class="text-3xl sm:text-5xl font-black uppercase tracking-tight text-white leading-tight">
+              Ready to showcase your facility or scale your enterprise?
+            </h2>
+            <p class="text-sm sm:text-base text-white/80 font-light leading-relaxed max-w-2xl">
+              Connect directly with our media and growth team under Vishwalata Ventures Private Limited. We will review your production capacity and schedule your field documentation or marketing rollout.
+            </p>
+          </div>
+
+          <div class="lg:col-span-5 flex flex-col gap-4 bg-white/[0.02] border border-white/10 p-6 sm:p-7 rounded-2xl backdrop-blur-md">
+            <div class="space-y-3 font-mono text-xs">
+              <div class="flex items-center justify-between pb-2 border-b border-white/10 text-white/60">
+                <span>INQUIRY TYPE</span>
+                <span class="text-white font-bold">Documentary / Agency</span>
+              </div>
+              <div class="flex items-center justify-between pb-2 border-b border-white/10 text-white/60">
+                <span>HEADQUARTERS</span>
+                <span class="text-white">Maharashtra // National Reach</span>
+              </div>
+              <div class="flex items-center justify-between text-white/60">
+                <span>RESPONSE TIME</span>
+                <span class="text-emerald-400 font-bold">Within 24 Hours</span>
+              </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-3 pt-2">
+              <a
+                href="https://wa.me/919890229131?text=Hello%20Vyaparnama,%20we%20want%20to%20engage%20your%20services"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex-1 px-5 py-3.5 rounded-xl bg-emerald-500 text-black font-bold text-xs uppercase tracking-wider hover:bg-emerald-400 transition-colors inline-flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(16,185,129,0.35)]"
+              >
+                <span>WhatsApp Desk</span>
+                <span>↗</span>
+              </a>
+
+              <a
+                href="/contact"
+                class="flex-1 px-5 py-3.5 rounded-xl bg-[#FF4D00] text-white font-mono text-xs uppercase font-bold tracking-wider hover:bg-[#e04400] transition-colors inline-flex items-center justify-center gap-2 shadow-[0_0_25px_rgba(255,77,0,0.35)]"
+              >
+                <span>Contact Page</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+</Layout>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  gsap.registerPlugin(ScrollTrigger);
+
+  const initServicesAnimations = () => {
+    const cards = document.querySelectorAll('.service-card');
+    if (cards.length) {
+      gsap.fromTo(
+        cards,
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.5,
+          stagger: 0.1,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: '.services-grid',
+            start: 'top 85%',
+          }
+        }
+      );
+    }
+  };
+
+  document.addEventListener('DOMContentLoaded', initServicesAnimations);
+  document.addEventListener('astro:page-load', initServicesAnimations);
+</script>

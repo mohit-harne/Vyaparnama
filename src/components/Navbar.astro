@@ -3,83 +3,340 @@ const pathname = Astro.url.pathname.replace(/\/$/, "") || "/";
 
 const links = [
   { href: "/", label: "Home" },
-  { href: "/stories", label: "Ground Stories" },
-  { href: "/methodology", label: "Field Teardown" },
-  { href: "/contact", label: "Invite Production" },
+  { href: "https://vyapo-black.vercel.app/", label: "Merchant Dictionary" },
+  { href: "/services", label: "Services" },
+  { href: "/blogs-vlogs", label: "Blogs & Vlogs" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact Us" },
 ];
 ---
 
-<header class="fixed top-0 w-full z-50 px-4 sm:px-8 py-4 transition-all duration-300" id="main-nav">
-  <div class="max-w-7xl mx-auto flex items-center justify-between px-5 py-3 rounded-2xl bg-[#0e0e0e]/85 backdrop-blur-xl border border-white/10 shadow-[0_10px_35px_rgba(0,0,0,0.8)]">
-    
-    <!-- Logo with Vermilion Accent -->
-    <a href="/" class="flex items-center gap-3 group">
-      <div class="h-8 w-auto flex items-center">
-        <!-- Brand wordmark & geometric chevron -->
-        <span class="text-xl font-black tracking-tighter uppercase font-mono text-white flex items-center">
-          <span class="text-[#FF4D00] font-black mr-1 text-2xl">▲</span> VYAPAR<span class="text-[#FF4D00]">NAMA</span>
-        </span>
-      </div>
-      <span class="hidden md:inline-block text-[9px] font-mono tracking-[0.25em] uppercase text-white/40 pl-3 border-l border-white/10">
-        The Business Network[cite: 2]
+<header class="fixed top-0 w-full z-50 px-3 sm:px-6 py-3 transition-all duration-300" id="main-nav">
+  <div 
+    id="nav-inner"
+    class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-2.5 rounded-2xl bg-[#0e0e0e]/90 backdrop-blur-xl border border-white/10 shadow-[0_10px_35px_rgba(0,0,0,0.85)] relative z-50"
+  >
+    <!-- Brand Logo -->
+    <a href="/" class="flex items-center gap-2 group  z-20 flex-shrink-0">
+      <span class="text-lg sm:text-xl font-black tracking-tight uppercase font-mono text-white flex items-center">
+        <span class="text-[#FF4D00] font-black mr-1 text-xl sm:text-2xl transition-transform duration-300 group-hover:scale-125">▲</span> VYAPAR<span class="text-[#FF4D00]">NAMA</span>
       </span>
     </a>
 
-    <!-- Desktop Nav Links -->
-    <nav class="hidden md:flex items-center gap-1 font-mono text-xs uppercase tracking-wider">
+    <!-- Desktop Navigation Links with Sliding Pill Spotlight -->
+    <nav 
+      id="desktop-nav-links" 
+      class="hidden lg:flex items-center gap-1 font-mono text-[11px] uppercase tracking-wider relative rounded-xl px-1.5 py-1 bg-white/[0.02] border border-white/5"
+    >
+      <div 
+        id="nav-pill" 
+        class="absolute top-1 bottom-1 rounded-lg bg-gradient-to-r from-[#FF4D00]/25 to-amber-500/20 border border-[#FF4D00]/50 opacity-0 pointer-events-none shadow-[0_0_15px_rgba(255,77,0,0.3)] transition-opacity"
+      ></div>
+
       {links.map((link) => {
         const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href));
         return (
           <a
             href={link.href}
-            class={`px-4 py-2 rounded-xl transition-all duration-200 flex items-center gap-1.5 ${
+            data-active={isActive ? "true" : "false"}
+            class={`nav-link-item relative z-10 px-3.5 py-1.5 rounded-lg transition-colors duration-200 flex items-center gap-1.5 whitespace-nowrap  ${
               isActive 
-                ? 'bg-[#FF4D00]/15 text-[#FF4D00] font-bold border border-[#FF4D00]/30 shadow-[0_0_15px_rgba(255,77,0,0.2)]' 
-                : 'text-white/60 hover:text-white hover:bg-white/[0.04]'
+                ? 'text-[#FF4D00] font-bold' 
+                : 'text-white/60 hover:text-white'
             }`}
           >
-            {isActive && <span class="w-1.5 h-1.5 rounded-full bg-[#FF4D00] animate-ping"></span>}
+            {isActive && <span class="w-1.5 h-1.5 rounded-full bg-[#FF4D00] animate-ping flex-shrink-0"></span>}
             {link.label}
           </a>
         );
       })}
     </nav>
 
-    <!-- Mobile Button -->
-    <div class="flex items-center gap-3">
+    <!-- Right Unit Action & Futuristic Aesthetic Mobile Trigger -->
+    <div class="flex items-center gap-3 relative z-[60]">
       <a 
         href="/contact" 
-        class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#FF4D00] text-white text-xs font-mono font-bold uppercase tracking-wider hover:bg-[#e04400] transition-colors shadow-[0_0_20px_rgba(255,77,0,0.3)]"
+        class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#FF4D00] text-white text-[11px] font-mono font-bold uppercase tracking-wider hover:bg-[#e04400] transition-all duration-300 shadow-[0_0_20px_rgba(255,77,0,0.35)] hover:shadow-[0_0_25px_rgba(255,77,0,0.5)] active:scale-95 "
       >
-        <span>Shoot Our Unit</span>
+        <span>Shoot Unit</span>
         <span>→</span>
       </a>
 
-      <button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 p-2 rounded-lg bg-white/5 border border-white/10" aria-label="Toggle Menu">
-        <span class="w-5 h-0.5 bg-white"></span>
-        <span class="w-5 h-0.5 bg-white"></span>
+      <!-- AESTHETIC CYBER-INDUSTRIAL MENU TRIGGER -->
+      <button 
+        id="mobile-menu-btn" 
+        type="button"
+        class="lg:hidden relative group flex items-center gap-2 pl-3 pr-2.5 py-1.5 rounded-full bg-[#141414] border border-white/15 hover:border-[#FF4D00]/60 active:scale-95 transition-all duration-300 shadow-[0_4px_15px_rgba(0,0,0,0.6)] " 
+        aria-label="Toggle Navigation Menu"
+        aria-expanded="false"
+      >
+        <!-- Ambient subtle glow ring -->
+        <span class="absolute -inset-0.5 rounded-full bg-gradient-to-r from-[#FF4D00]/20 to-amber-500/20 opacity-0 group-hover:opacity-100 blur transition-opacity"></span>
+
+        <!-- Dynamic State Text Label -->
+        <span 
+          id="btn-label" 
+          class="relative font-mono text-[10px] uppercase font-bold tracking-[0.2em] text-white/80 transition-colors group-hover:text-[#FF4D00]"
+        >
+          Menu
+        </span>
+
+        <!-- Mechanical Reticle / Crosshair Icon Container -->
+        <div class="relative w-7 h-7 rounded-full bg-white/[0.04] border border-white/10 flex items-center justify-center overflow-hidden">
+          <div id="reticle-icon" class="relative w-3.5 h-3.5 flex items-center justify-center will-change-transform">
+            <!-- Horizontal Bar -->
+            <span class="absolute w-3.5 h-[1.5px] bg-[#FF4D00] rounded-full transition-colors"></span>
+            <!-- Vertical Bar (Morphs into Cross on rotate) -->
+            <span class="absolute h-3.5 w-[1.5px] bg-white rounded-full transition-colors"></span>
+          </div>
+        </div>
       </button>
     </div>
-
   </div>
 
-  <!-- Mobile Dropdown -->
-  <div id="mobile-drawer" class="hidden md:hidden mt-2 p-4 rounded-2xl bg-[#0c0c0c] border border-white/10 space-y-2 font-mono text-sm">
-    {links.map((link) => (
-      <a href={link.href} class="block px-3 py-2 rounded-lg text-white/70 hover:text-[#FF4D00] hover:bg-white/5">
-        {link.label}
+  <!-- Mobile Fullscreen Backdrop Drawer (Z-Index is strictly below the nav buttons) -->
+  <div 
+    id="mobile-drawer" 
+    class="fixed inset-0 top-0 left-0 w-full h-[100dvh] bg-[#080808]/95 backdrop-blur-2xl z-40 px-6 pt-24 pb-8 flex flex-col justify-between hidden pointer-events-none opacity-0 lg:hidden"
+  >
+    <!-- Background Ambient Glow inside mobile drawer -->
+    <div class="absolute top-1/4 right-0 w-[240px] h-[240px] bg-[#FF4D00]/10 rounded-full blur-[100px] pointer-events-none -z-10"></div>
+    <div class="absolute bottom-10 left-0 w-[200px] h-[200px] bg-amber-500/10 rounded-full blur-[100px] pointer-events-none -z-10"></div>
+
+    <div class="space-y-1.5 w-full max-w-sm mx-auto relative z-10">
+      <div class="flex items-center justify-between font-mono text-[10px] uppercase tracking-widest text-white/30 pb-3 border-b border-white/10 mb-4">
+        <span>// Navigation Index</span>
+        <span class="text-[#FF4D00] flex items-center gap-1.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#FF4D00] animate-ping"></span>
+          Ready
+        </span>
+      </div>
+
+      {links.map((link, idx) => {
+        const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href));
+        return (
+          <div class="mobile-nav-item border-b border-white/5 py-1">
+            <a 
+              href={link.href} 
+              class={`flex items-center justify-between py-3 px-3.5 rounded-xl transition-all  ${
+                isActive 
+                  ? 'bg-[#FF4D00]/15 text-[#FF4D00] font-bold border border-[#FF4D00]/30 shadow-[0_0_15px_rgba(255,77,0,0.2)]' 
+                  : 'text-white/70 hover:text-white hover:bg-white/[0.04]'
+              }`}
+            >
+              <div class="flex items-center gap-3">
+                <span class="font-mono text-xs text-[#FF4D00]/60">0{idx + 1}</span>
+                <span class="font-mono text-sm uppercase tracking-wide">{link.label}</span>
+              </div>
+              <span class="font-mono text-xs">
+                {isActive ? '●' : '→'}
+              </span>
+            </a>
+          </div>
+        );
+      })}
+    </div>
+
+    <!-- Mobile Drawer Footer Callout -->
+    <div class="w-full max-w-sm mx-auto pt-6 border-t border-white/10 mobile-nav-footer relative z-10">
+      <a 
+        href="/contact" 
+        class="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl bg-[#FF4D00] text-white font-mono text-xs font-bold uppercase tracking-wider shadow-[0_0_25px_rgba(255,77,0,0.4)] active:scale-95 transition-transform "
+      >
+        <span>Connect Production Unit</span>
+        <span>→</span>
       </a>
-    ))}
-    <a href="/contact" class="block text-center mt-3 py-2.5 rounded-xl bg-[#FF4D00] text-white font-bold">
-      Book Factory Film Tour
-    </a>
+      <p class="font-mono text-[10px] text-center text-white/30 uppercase tracking-widest mt-4">
+        Vyaparnama Ground Documentation
+      </p>
+    </div>
   </div>
 </header>
 
 <script>
-  const btn = document.getElementById('mobile-menu-btn');
-  const drawer = document.getElementById('mobile-drawer');
-  btn?.addEventListener('click', () => {
-    drawer?.classList.toggle('hidden');
-  });
+  import { gsap } from 'gsap';
+
+  const initNavbar = () => {
+    const mainNav = document.getElementById('main-nav');
+    const navInner = document.getElementById('nav-inner');
+    const linksContainer = document.getElementById('desktop-nav-links');
+    const pill = document.getElementById('nav-pill');
+    const linkItems = document.querySelectorAll('.nav-link-item');
+    const btn = document.getElementById('mobile-menu-btn');
+    const btnLabel = document.getElementById('btn-label');
+    const reticleIcon = document.getElementById('reticle-icon');
+    const drawer = document.getElementById('mobile-drawer');
+
+    // 1. Initial Nav Entrance Animation
+    gsap.fromTo(
+      navInner,
+      { y: -30, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out', delay: 0.1 }
+    );
+
+    // 2. Sliding Active/Hover Pill Indicator for Desktop
+    const positionPill = (el:any) => {
+      if (!linksContainer || !pill || !el) return;
+      const navBounds = linksContainer.getBoundingClientRect();
+      const elBounds = el.getBoundingClientRect();
+      const x = elBounds.left - navBounds.left;
+      const width = elBounds.width;
+
+      gsap.to(pill, {
+        x,
+        width,
+        opacity: 1,
+        scaleX: 1,
+        duration: 0.35,
+        ease: 'power3.out',
+      });
+    };
+
+    const activeEl = document.querySelector('.nav-link-item[data-active="true"]');
+    if (activeEl) {
+      positionPill(activeEl);
+    }
+
+    linkItems.forEach((link) => {
+      link.addEventListener('mouseenter', () => positionPill(link));
+    });
+
+    linksContainer?.addEventListener('mouseleave', () => {
+      if (activeEl) {
+        positionPill(activeEl);
+      } else if (pill) {
+        gsap.to(pill, { opacity: 0, scaleX: 0.8, duration: 0.3 });
+      }
+    });
+
+    // 3. Scroll Dimming & Shrinking
+    window.addEventListener('scroll', () => {
+      if (!navInner) return;
+      if (window.scrollY > 30) {
+        gsap.to(navInner, {
+          paddingTop: '0.45rem',
+          paddingBottom: '0.45rem',
+          backgroundColor: 'rgba(10, 10, 10, 0.95)',
+          duration: 0.3,
+          ease: 'power2.out',
+        });
+      } else {
+        gsap.to(navInner, {
+          paddingTop: '0.65rem',
+          paddingBottom: '0.65rem',
+          backgroundColor: 'rgba(14, 14, 14, 0.9)',
+          duration: 0.3,
+          ease: 'power2.out',
+        });
+      }
+    }, { passive: true });
+
+    // 4. Kinetic Reticle Morph & Mobile Drawer Toggle
+    let isDrawerOpen = false;
+
+    const toggleMenu = () => {
+      isDrawerOpen = !isDrawerOpen;
+      btn?.setAttribute('aria-expanded', String(isDrawerOpen));
+
+      if (isDrawerOpen) {
+        document.body.style.overflow = 'hidden';
+        drawer?.classList.remove('hidden');
+
+        // Reticle spins 135deg into an 'X' close indicator
+        gsap.to(reticleIcon, {
+          rotate: 135,
+          scale: 1.15,
+          duration: 0.4,
+          ease: 'back.out(2)',
+        });
+
+        // Label crossfade
+        if (btnLabel) {
+          gsap.to(btnLabel, {
+            opacity: 0,
+            y: -5,
+            duration: 0.15,
+            onComplete: () => {
+              btnLabel.textContent = 'Close';
+              btnLabel.classList.add('text-[#FF4D00]');
+              gsap.to(btnLabel, { opacity: 1, y: 0, duration: 0.2 });
+            }
+          });
+        }
+
+        // Drawer Fade & Slide In
+        gsap.to(drawer, {
+          opacity: 1,
+          pointerEvents: 'auto',
+          duration: 0.35,
+          ease: 'power2.out',
+        });
+
+        const items = drawer?.querySelectorAll('.mobile-nav-item');
+        if (items) {
+          gsap.fromTo(
+            items,
+            { y: 30, opacity: 0 },
+            { y: 0, opacity: 1, duration: 0.45, stagger: 0.05, ease: 'power3.out', delay: 0.1 }
+          );
+        }
+
+        const footer = drawer?.querySelector('.mobile-nav-footer');
+        if (footer) {
+          gsap.fromTo(
+            footer,
+            { y: 20, opacity: 0 },
+            { y: 0, opacity: 1, duration: 0.4, ease: 'power2.out', delay: 0.3 }
+          );
+        }
+      } else {
+        document.body.style.overflow = '';
+
+        // Reticle spins back to 0deg (+)
+        gsap.to(reticleIcon, {
+          rotate: 0,
+          scale: 1,
+          duration: 0.4,
+          ease: 'back.out(2)',
+        });
+
+        // Label crossfade back to Menu
+        if (btnLabel) {
+          gsap.to(btnLabel, {
+            opacity: 0,
+            y: 5,
+            duration: 0.15,
+            onComplete: () => {
+              btnLabel.textContent = 'Menu';
+              btnLabel.classList.remove('text-[#FF4D00]');
+              gsap.to(btnLabel, { opacity: 1, y: 0, duration: 0.2 });
+            }
+          });
+        }
+
+        // Drawer Fade Out
+        gsap.to(drawer, {
+          opacity: 0,
+          pointerEvents: 'none',
+          duration: 0.3,
+          ease: 'power2.in',
+          onComplete: () => {
+            drawer?.classList.add('hidden');
+          }
+        });
+      }
+    };
+
+    btn?.addEventListener('click', toggleMenu);
+
+    // Close menu when clicking any mobile navigation link
+    drawer?.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        if (isDrawerOpen) toggleMenu();
+      });
+    });
+  };
+
+  document.addEventListener('DOMContentLoaded', initNavbar);
+  document.addEventListener('astro:page-load', initNavbar);
 </script>

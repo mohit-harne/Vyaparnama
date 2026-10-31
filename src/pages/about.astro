@@ -1,0 +1,324 @@
+---
+// src/pages/about.astro
+import Layout from '../layouts/Layout.astro';
+
+const milestones = [
+  {
+    year: "PHASE 01",
+    tag: "Field Conception",
+    title: "Ground-Zero Storytelling Initiation",
+    desc: "Vyaparnama started as an on-ground investigative lens into tier-2 and tier-3 industrial manufacturing clusters, documenting how factory owners run real production lines away from mainstream media."
+  },
+  {
+    year: "PHASE 02",
+    tag: "Entity Incorporation",
+    title: "Vishwalata Ventures Pvt. Ltd.",
+    desc: "Formalized operations under Vishwalata Ventures Private Limited, integrating media production, growth consulting, and high-impact digital outreach."
+  },
+  {
+    year: "PHASE 03",
+    tag: "Ecosystem Launch",
+    title: "Vyapo — Business Dictionary",
+    desc: "Engineered a dedicated B2B trade infrastructure to bridge manufacturers, wholesalers, and retailers with verified supply channels and live catalog sharing."
+  },
+  {
+    year: "PHASE 04",
+    tag: "National Expansion",
+    title: "Commercial Media & Influencer Desk",
+    desc: "Scaled into full-stack performance marketing, digital branding, and an exclusive business creator network empowering enterprise brands across India."
+  }
+];
+
+const pillars = [
+  {
+    code: "PIL // 01",
+    title: "Real Ground Truths",
+    desc: "No corporate fluff. We step inside high-speed weaving sheds, casting foundries, and APMC depots to reveal exact costs, machine speeds, and supply realities."
+  },
+  {
+    code: "PIL // 02",
+    title: "B2B Trade Empowerment",
+    desc: "Bridging the gap between raw producers and bulk retail buyers. We turn complex supply chains into accessible, transparent commercial connections."
+  },
+  {
+    code: "PIL // 03",
+    title: "Community Over Monopolies",
+    desc: "जहॉं व्यापार मिलता है community से. We believe Indian commerce grows when regional manufacturers and local merchants share access, knowledge, and visibility."
+  }
+];
+
+const executiveTeam = [
+  {
+    name: "Core Operational Leadership",
+    role: "Direction & Strategic Partnerships",
+    focus: "Leading business investigations, production roadmaps, and B2B alliances across India's wholesale corridors.",
+    tag: "LEAD // OPS",
+    verified: true
+  },
+  {
+    name: "Field Production Crew",
+    role: "Cinematography & Audio Telemetry",
+    focus: "Operating 4K multi-cam rigs, cinema drones, and field audio in active industrial plants and distribution transit hubs.",
+    tag: "FIELD // UNIT",
+    verified: true
+  },
+  {
+    name: "Digital Growth & Media Desk",
+    role: "Performance & Creator Network",
+    focus: "Managing YouTube distribution, B2B acquisition funnels, and creator collaborations under Vishwalata Ventures.",
+    tag: "GROWTH // DESK",
+    verified: true
+  },
+  {
+    name: "Vyapo Systems Engineering",
+    role: "B2B Infrastructure & Catalog Sync",
+    focus: "Building and testing search architecture, supplier verification protocols, and trade reconciliation tools.",
+    tag: "PLATFORM // DEV",
+    verified: true
+  }
+];
+---
+
+<Layout title="About Us | Vyaparnama & Vishwalata Ventures">
+  <main class="relative z-10 text-white selection:bg-[#FF4D00] selection:text-black bg-transparent">
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="min-h-[55vh] flex flex-col justify-end px-5 sm:px-8 lg:px-12 pt-32 pb-12 max-w-7xl mx-auto box-border">
+      
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-5 mb-8">
+        <div class="flex items-center gap-3 font-mono text-xs">
+          <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FF4D00]/20 border border-[#FF4D00]/50 text-[#FF4D00] backdrop-blur-md">
+            <span class="w-2 h-2 rounded-full bg-[#FF4D00] animate-ping"></span>
+            ORGANIZATION DOSSIER
+          </span>
+          <span class="text-white/60 tracking-wider hidden sm:inline-block font-semibold">
+            VISHWALATA VENTURES PRIVATE LIMITED
+          </span>
+        </div>
+        <div class="font-mono text-xs text-white/70">
+          Where Commerce Meets Community
+        </div>
+      </div>
+
+      <div class="max-w-4xl space-y-5">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/15 text-[11px] font-mono text-white/90 uppercase tracking-widest">
+          व्यापारनामा (Vyaparnama)
+        </div>
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black uppercase tracking-tight text-white leading-[0.95]">
+          Uncovering India's <br />
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/90 to-[#FF4D00]">
+            Ground-Reality Commerce.
+          </span>
+        </h1>
+        <p class="text-white/80 text-base sm:text-lg lg:text-xl font-light leading-relaxed max-w-3xl">
+          व्यापारनामा एक platform है जो व्यापारियों, brands और entrepreneurs को empower करता है। हमारे YouTube Channel पर authentic business journeys, operational challenges और scalable solutions का विश्लेषण मिलता है।
+        </p>
+      </div>
+
+    </section>
+
+    <!-- ==================== ENTERPRISE OVERVIEW SLATE ==================== -->
+    <section class="px-5 sm:px-8 lg:px-12 py-12 max-w-7xl mx-auto">
+      <div class="p-8 sm:p-12 rounded-3xl bg-black/65 backdrop-blur-2xl border border-white/15 relative overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.85)]">
+        
+        <div class="absolute -right-20 -top-20 w-80 h-80 rounded-full bg-[#FF4D00]/15 blur-[120px] pointer-events-none"></div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center relative z-10">
+          <div class="lg:col-span-7 space-y-4">
+            <span class="font-mono text-xs uppercase tracking-widest text-[#FF4D00] font-bold block">
+              // Parent Corporate Architecture
+            </span>
+            <h2 class="text-2xl sm:text-4xl font-black uppercase tracking-tight text-white leading-tight">
+              Operating Under Vishwalata Ventures Private Limited
+            </h2>
+            <p class="text-sm sm:text-base text-white/80 font-light leading-relaxed">
+              Vyaparnama is not merely a media brand. Backed by Vishwalata Ventures Private Limited, we combine on-ground business documentaries with high-performance digital marketing, strategic corporate branding, and an exclusive business influencer network.
+            </p>
+            <p class="text-sm sm:text-base text-white/80 font-light leading-relaxed">
+              Through our key venture <strong>Vyapo — Business Dictionary</strong>, we solve fundamental supply chain challenges by connecting manufacturers, wholesalers, and retailers with authentic supplier discovery and catalog sharing tools.
+            </p>
+          </div>
+
+          <div class="lg:col-span-5 grid grid-cols-2 gap-4 font-mono text-xs">
+            <div class="p-5 rounded-2xl bg-white/[0.03] border border-white/10">
+              <span class="block text-2xl font-bold text-white font-sans">50M+</span>
+              <span class="text-white/50 text-[11px] uppercase tracking-wider mt-1 block">Trade Impressions</span>
+            </div>
+            <div class="p-5 rounded-2xl bg-white/[0.03] border border-white/10">
+              <span class="block text-2xl font-bold text-[#FF4D00] font-sans">100+</span>
+              <span class="text-white/50 text-[11px] uppercase tracking-wider mt-1 block">Industrial Units</span>
+            </div>
+            <div class="p-5 rounded-2xl bg-white/[0.03] border border-white/10">
+              <span class="block text-2xl font-bold text-white font-sans">1000+</span>
+              <span class="text-white/50 text-[11px] uppercase tracking-wider mt-1 block">Verified Nodes</span>
+            </div>
+            <div class="p-5 rounded-2xl bg-white/[0.03] border border-white/10">
+              <span class="block text-2xl font-bold text-emerald-400 font-sans">Pan-India</span>
+              <span class="text-white/50 text-[11px] uppercase tracking-wider mt-1 block">Corridor Network</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== THREE GUIDING PILLARS ==================== -->
+    <section class="px-5 sm:px-8 lg:px-12 py-16 max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-white/15 pb-6 mb-12">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-[#FF4D00] font-bold block mb-1">
+            // Core Tenets
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-black uppercase tracking-tight text-white">
+            What Drives Vyaparnama
+          </h2>
+        </div>
+        <p class="font-mono text-xs sm:text-sm text-white/70 max-w-sm">
+          Guiding principles behind our journalism, B2B software, and agency offerings.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+        {pillars.map((pil) => (
+          <div class="p-8 rounded-3xl bg-black/60 backdrop-blur-xl border border-white/15 hover:border-[#FF4D00]/60 transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <span class="font-mono text-xs text-[#FF4D00] font-bold tracking-widest block mb-4">
+                {pil.code}
+              </span>
+              <h3 class="text-2xl font-bold uppercase tracking-tight text-white mb-3">
+                {pil.title}
+              </h3>
+              <p class="text-sm text-white/75 font-light leading-relaxed">
+                {pil.desc}
+              </p>
+            </div>
+            <div class="mt-8 pt-4 border-t border-white/10 flex items-center justify-between font-mono text-[11px] text-white/40">
+              <span>Verified Stance</span>
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- ==================== ROADMAP & MILESTONES ==================== -->
+    <section class="px-5 sm:px-8 lg:px-12 py-16 max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-white/15 pb-6 mb-12">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-[#FF4D00] font-bold block mb-1">
+            // Timeline
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-black uppercase tracking-tight text-white">
+            Evolution of the Enterprise
+          </h2>
+        </div>
+        <p class="font-mono text-xs sm:text-sm text-white/70 max-w-sm">
+          From first camera roll in tier-2 textile units to a complete commerce ecosystem.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {milestones.map((item) => (
+          <div class="p-6 rounded-2xl bg-black/60 backdrop-blur-xl border border-white/15 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between font-mono text-xs mb-3 pb-2 border-b border-white/10">
+                <span class="text-[#FF4D00] font-bold">{item.year}</span>
+                <span class="text-white/50">{item.tag}</span>
+              </div>
+              <h4 class="text-lg font-bold uppercase tracking-tight text-white mb-2">
+                {item.title}
+              </h4>
+              <p class="text-xs sm:text-sm text-white/75 font-light leading-relaxed">
+                {item.desc}
+              </p>
+            </div>
+            <div class="mt-6 pt-3 border-t border-white/5 font-mono text-[10px] text-white/30">
+              Checkpoint Recorded
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- ==================== EXECUTION DIVISIONS & CREW ==================== -->
+    <section class="px-5 sm:px-8 lg:px-12 py-16 max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-white/15 pb-6 mb-12">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-widest text-[#FF4D00] font-bold block mb-1">
+            // The Units
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-black uppercase tracking-tight text-white">
+            Operational Divisions
+          </h2>
+        </div>
+        <p class="font-mono text-xs sm:text-sm text-white/70 max-w-sm">
+          Field producers, growth analysts, and B2B platform architects.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {executiveTeam.map((unit) => (
+          <div class="p-6 rounded-2xl bg-black/65 backdrop-blur-xl border border-white/15 hover:border-[#FF4D00]/50 transition-colors flex flex-col justify-between shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+            <div>
+              <div class="flex items-center justify-between font-mono text-[10px] text-[#FF4D00] mb-3">
+                <span class="px-2 py-0.5 rounded bg-[#FF4D00]/15 border border-[#FF4D00]/30 font-bold">{unit.tag}</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+              </div>
+              <h3 class="text-lg font-bold uppercase tracking-tight text-white mb-1">
+                {unit.name}
+              </h3>
+              <p class="font-mono text-xs text-white/50 mb-3">{unit.role}</p>
+              <p class="text-xs text-white/75 font-light leading-relaxed">
+                {unit.focus}
+              </p>
+            </div>
+            <div class="mt-5 pt-3 border-t border-white/10 font-mono text-[10px] text-white/40 flex items-center justify-between">
+              <span>Status</span>
+              <span class="text-emerald-400">Active Node</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- ==================== CALL TO ACTION ==================== -->
+    <section class="px-5 sm:px-8 lg:px-12 py-16 max-w-7xl mx-auto">
+      <div class="p-8 sm:p-12 lg:p-14 rounded-3xl bg-black/70 backdrop-blur-2xl border border-white/20 relative overflow-hidden shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8">
+        
+        <div class="max-w-xl space-y-3">
+          <span class="font-mono text-xs uppercase tracking-widest text-[#FF4D00] font-bold block">
+            // Join the Network
+          </span>
+          <h3 class="text-2xl sm:text-4xl font-black uppercase tracking-tight text-white">
+            Connect with our leadership & field unit.
+          </h3>
+          <p class="text-sm text-white/80 font-light leading-relaxed">
+            Interested in listing on Vyapo, inviting our production crew to your factory, or scaling via our marketing and creator network?
+          </p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-4 shrink-0">
+          <a
+            href="https://wa.me/919890229131?text=Hello%20Vyaparnama%20Team,%20we%20want%20to%20collaborate"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-6 py-3.5 rounded-xl bg-emerald-500 text-black font-bold text-xs uppercase tracking-wider hover:bg-emerald-400 transition-colors shadow-[0_0_20px_rgba(16,185,129,0.35)]"
+          >
+            <span>WhatsApp Unit</span>
+            <span>↗</span>
+          </a>
+
+          <a
+            href="/contact"
+            class="px-6 py-3.5 rounded-xl bg-[#FF4D00] text-white font-mono text-xs font-bold uppercase tracking-wider hover:bg-[#e04400] transition-colors shadow-[0_0_25px_rgba(255,77,0,0.35)]"
+          >
+            <span>Contact Desk</span>
+            <span>→</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+</Layout>
